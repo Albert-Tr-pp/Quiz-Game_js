@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Wants to Be a Millionaire - Summary Page</title>
+
+    <style>
+        body{
+            margin: 0%;
+            background-color: rgb(24, 24, 24);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        main{
+            width: 50%;
+            margin: auto;
+            background-color: rgb(13, 95, 95);
+        }
+
+        table{
+            padding: 20px;
+            margin: 10px;
+        }
+
+        #go_lobby_button{
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <!-- table for results -->
+        <table>
+            <tr>
+                <td>Question:</td>
+                <td>Your Answer:</td>
+                <td>Status:</td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td class="question"></td>
+                <td class="answer"></td>
+                <td class="status"></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="amoun_answered"></td>
+
+            </tr>
+            <tr>
+                <td colspan="3" id="player_prize"></td>
+
+            </tr>
+        </table>
+    
+        <button id="go_lobby_button" onclick="window.location.href = '../welcome_page/welcome_page.html'">Go to Lobby</button>
+    </main>
+</body>
+
+<script>
+    //get player prizeCount
+    prizeCount = localStorage.getItem("prizeCount");
+    //console.log(prizeCount);
+
+    //create prize var and set praze on base of prizeCount(how many questions player correctly answered)
+    let prize = ""
+    if (prizeCount >= 0){
+            prize = "£0";   
+    }
+    if (prizeCount >= 5){
+            prize = "£1,000";   
+    }
+    if (prizeCount >= 10){
+            prize = "£32,000";   
+    }
+    if (prizeCount >= 15){
+            prize = "1 Million";   
+    }
+
+    //get all col to update table
+    let question = document.querySelectorAll('.question');
+    let answer = document.querySelectorAll('.answer');
+    let status = document.querySelectorAll('.status');
+    //console.log("1: ", question, "2: ", answer, "3: ", status)
+
+    //get last to col to put general game data
+    let amoun_answered = document.getElementById('amoun_answered');
+    let player_prize = document.getElementById('player_prize');
+
+    //for loops to bild table
+    for(let i = 0; i <= (prizeCount); i++){
+        question[i].textContent = localStorage.getItem(`Q-${i}`)
+    }
+
+    for(let i = 0; i <= (prizeCount); i++){
+        answer[i].textContent = localStorage.getItem(`A-${i}`)
+    }
+
+    for(let i = 0; i <= (prizeCount); i++){
+        status[i].textContent = "Correct!"
+        status[i].style.color = 'rgb(133, 201, 133)'
+        status[15].textContent = ".............." //i need 16th col to prevent error
+    }
+    if (prizeCount != 15) {
+        //if player answered on less than 15 ques. so, last must be wrong
+        status[prizeCount].textContent = "Incorrect!"
+        status[prizeCount].style.color = 'rgb(210, 140, 140)'
+    }
+
+    //modify last cols with general info
+    amoun_answered.textContent = `Dear ${localStorage.getItem("name")} You correctly answered for ${prizeCount} questions!`;
+    player_prize.textContent = `Your prize is: ${prize}!!!`;
+    
+</script>
+</html>

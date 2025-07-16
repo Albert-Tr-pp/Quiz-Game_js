@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Wants to Be a Millionaire - Welcame Page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        body{
+            margin: 0%;
+            background-color: rgb(24, 24, 24);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        main{
+            width: 30%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+            background-color: rgb(13, 95, 95);
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        //clear localStorage
+        localStorage.clear();
+
+        function start_game_n_get_name () {
+            let name = document.getElementById('txt_name').value;
+            //console.log(name)
+            if (name) {
+                //save name and start game if name entered and btm pressed
+                localStorage.setItem("name", name)
+                window.location.href = '../index.html'
+            }
+            else{
+                alert("ERROR - NAME MUST BE ENTERED!")
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <main id="">
+        <h2 style="text-align: center;">Welcome to<br>"Who Wants to Be a Millionaire"<br>Game!</h2>
+        <h3>&#9745; You have 15 seconds to answer<br>&#9745; 15 right answers and you WIN!</h3>
+        <label>Enter your Name:</label><br>
+        <input type="text" id="txt_name" placeholder="Here:"><br><br>
+        <button id="" onclick="start_game_n_get_name()">Start Game!</button>
+
+    </main> 
+</body>
+</html>

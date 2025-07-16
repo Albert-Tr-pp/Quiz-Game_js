@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(24, 24, 24);
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+}
+
+main{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+ /* ------------ Main Logo ------------ */
+#container_logo{
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#main_logo{
+    width: 256px;
+    height: 256px;
+    opacity: 0.7;
+}
+
+ /* ------------ Table ------------ */
+#prize_table_container{
+    flex: 1;
+    background-color: rgb(0, 0, 0);
+}
+
+#prize-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(255, 239, 66);
+    text-align: left;
+    font-size: 24px;
+}
+
+#prize-table th, #prize-table td {
+    padding: 5px;
+}
+
+#prize-table th {
+    width: 10%;
+    font-weight: bold;
+}
+
+#prize-table td {
+    width: 45%;
+    text-align: right;
+}
+
+/* ------------ Questions and Answers ------------ */
+#questions_answers{
+    flex: 3;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.buttons_row{
+    display: flex;
+    justify-content: space-between;
+}
+
+#questions_answers button{
+    width: 50%;
+    min-height: 110px;
+    margin-top: 1%;
+    margin-right: 1%;
+
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+
+    background-color: rgb(70, 61, 166);
+    border-radius: 10px;
+}
+
+#questions_answers label{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+
+    background-color: rgb(70, 61, 166);
+}
+
+.answer_tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+/* ------------ Helpers ------------ */
+#helpers{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+}
+
+#helpers img{
+    width: 120px;
+}
+
+/* ------------ Footer ------------ */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    font-size: 24px;
+}
+
+/*
+color-palette:
+rgb(70, 61, 166) blue
+hsla(65, 78%, 68%, 0.436) yellow
+hsla(0, 78%, 68%, 0.436) red
+*/
