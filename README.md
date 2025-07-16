@@ -4,6 +4,7 @@
 ![Status](https://img.shields.io/badge/status-In%20Progress-yellow)
 ![Tech](https://img.shields.io/badge/tech-JavaScript%20%7C%20HTML%20%7C%20CSS-blueviolet)
 ![Inspiration](https://img.shields.io/badge/inspired%20by-Who%20Wants%20to%20Be%20a%20Millionaire%3F-lightgrey)
+![Version](https://img.shields.io/badge/version-1.0.0-green)
 
 ```
 A quiz game created using JavaScript, HTML and CSS inspired by television quiz show “Who Wants to Be a Millionaire?”.
